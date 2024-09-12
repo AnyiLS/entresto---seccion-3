@@ -1,0 +1,240 @@
+body {
+	margin: 0;
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #000;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.link {
+	position: absolute;
+	width: 52%;
+	height: 10%;
+	top: 68%;
+	left: 6%;
+}
+
+.container .cover-image {
+	width: auto;
+	height: 100vh;
+}
+
+.start-button {
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 100%;
+}
+
+.boton-home {
+	position: absolute;
+	width: 4.4%;
+	height: 8%;
+	top: 88.3%;
+	right: 47.8%;
+	cursor: pointer;
+	border-radius: 30px;
+}
+
+.boton-next {
+	position: absolute;
+	width: 4.4%;
+	height: 8%;
+	top: 88.3%;
+	right: 42.4%;
+	border-radius: 30px;
+	cursor: pointer;
+}
+
+.boton-atras {
+	position: absolute;
+	width: 4.4%;
+	height: 8%;
+	top: 88.3%;
+	right: 53.6%;
+	border-radius: 30px;
+}
+
+.puntero {
+	position: absolute;
+	width: 3.2%;
+	height: 7.4%;
+	top: 74.6%;
+	left: 58%;
+}
+
+.puntero img {
+	width: 100%;
+	height: 100%;
+	transform: rotate(99deg);
+}
+
+.puntero.animate__pulse {
+	animation-duration: 0.5s; /* Cambia el valor para ajustar la velocidad */
+}
+
+.puntero::before {
+	content: '';
+	position: absolute;
+	top: -10%;
+	left: -10%;
+	width: 120%;
+	height: 120%;
+	background: radial-gradient(circle, rgb(99 94 94 / 63%), #dbd0d0);
+	border-radius: 50%;
+	z-index: -1; /* Aseguramos que el resplandor esté detrás del puntero */
+	opacity: 0.7; /* Ajusta la opacidad según la intensidad del resplandor */
+	animation: pulseGlow 1.5s infinite; /* Animación para el resplandor */
+}
+
+/* modal  */
+.openModal {
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	width: 27.1%;
+	height: 7.3%;
+	right: 19%;
+	top: 79.3%;
+	z-index: 100;
+	cursor: pointer;
+	border-radius: 64px;
+}
+
+.modal img {
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	display: block;
+	left: 0%;
+	top: 0%;
+}
+
+.closeModal {
+	position: absolute;
+	width: 5%;
+	height: 10%;
+	z-index: 1000;
+	top: 8%;
+	right: 5%;
+	cursor: pointer;
+}
+
+/* video */
+.reproduc {
+	z-index: 1;
+	position: absolute;
+	top: 28.3%;
+    left: 17.7%;
+    width: 62.6%;
+    height: 58.8%;
+	background: black;
+	border-radius: 2%;
+	display: none;
+	z-index: 100;
+}
+
+.video-2 {
+	position: absolute;
+	width: 63.7%;
+	height: 70%;
+	top: 15%;
+	left: 19%;
+	cursor: pointer;
+}
+
+.play-boton {
+	position: absolute;
+	width: 67.1%;
+	height: 69.5%;
+	top: 14.7%;
+	left: 16%;
+	border-radius: 5%;
+	cursor: pointer;
+	z-index: 100;
+}
+
+.boton-play {
+	position: absolute;
+	width: 6.1%;
+	top: 53.4%;
+	left: 45.8%;
+	height: 10.7%;
+	cursor: pointer;
+}
+
+.boton-play img {
+	width: 100%;
+	height: 100%;
+	border-radius: 52px;
+	box-shadow: 0px 0px 20px 14px #00000054;
+	background: #fff;
+	cursor: pointer;
+}
+
+.vutom-col {
+	position: absolute;
+	width: 4.4%;
+	height: 7.4%;
+	top: 87%;
+	right: 3%;
+	background: #ffffff80;
+	border-radius: 90px;
+}
+
+/* Responsive */
+@media (max-width: 1365px) and (min-height: 768px) {
+	.container {
+		width: 100vw;
+		height: auto;
+	}
+
+	.container .cover-image {
+		width: auto;
+		height: 100vh;
+	}
+}
+
+@media (max-height: 767px) {
+	.container {
+		width: auto;
+		height: 100vh;
+	}
+}
+
+@media (min-height: 625px) and (max-height: 1280px) and (max-width: 1024px) {
+	.container {
+		width: 100vw;
+		height: auto;
+	}
+
+	.container .cover-image {
+		width: 100vw;
+		height: auto;
+	}
+}
+
+@media (max-height: 624px) and (max-width: 767px) {
+	.container {
+		width: 100vw;
+		height: auto;
+	}
+
+	.container .cover-image {
+		width: 100vw;
+		height: auto;
+	}
+}
