@@ -138,10 +138,8 @@ $(document).ready(function () {
 	})
 
 	$('.cerrar10').on('click', () => {
-		$(`.car-pop${pregunta + 1}`).css('display', 'none')
 		validarResultado()
-		pregunta++
-		cambiarPregunta()
+		$(`.car-pop${pregunta + 1}`).css('display', 'none')
 	})
 
 	console.log('conteo', conteo)
