@@ -15,10 +15,10 @@ const cambiarPregunta = () => {
 }
 
 const validarResultado = () => {
-	if (pregunta +1 === 10) {
+	if (pregunta + 1 === 10) {
 		localStorage.setItem('conteo', conteo.length)
 		window.location.href = './index235.html'
-	} 
+	}
 }
 
 $(document).ready(function () {
@@ -34,8 +34,10 @@ $(document).ready(function () {
 
 				setTimeout(() => {
 					validarResultado()
-					pregunta++
-					cambiarPregunta()
+					if (pregunta + 1 < 10) {
+						pregunta++
+						cambiarPregunta()
+					}
 				}, 2000)
 			} else {
 				sonidoerroneo()
@@ -61,8 +63,10 @@ $(document).ready(function () {
 				conteo.push(true)
 				setTimeout(() => {
 					validarResultado()
-					pregunta++
-					cambiarPregunta()
+					if (pregunta + 1 < 10) {
+						pregunta++
+						cambiarPregunta()
+					}
 				}, 2000)
 			} else {
 				sonidoerroneo()
