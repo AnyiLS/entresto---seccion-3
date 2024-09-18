@@ -105,6 +105,7 @@ const cambiarPregunta = () => {
 	executeMoving(document.querySelector(`.tarjeta${pregunta + 1}`))
 	handleDroppable(document.querySelector(`.tarjeta${pregunta + 1}`), document.querySelector('.falso'), handleCheckFalse)
 	handleDroppable(document.querySelector(`.tarjeta${pregunta + 1}`), document.querySelector('.verdadero'), handleCheckTrue)
+	$(`.punto${pregunta}`).css('background', '#50E2D0')
 }
 
 const validarResultado = () => {

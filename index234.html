@@ -8,13 +8,13 @@
 		<link rel="stylesheet" href="./css/styles234.css" />
 		<!-- Scripts -->
 		<script src="./js/jquery-3.2.1.min.js"></script>
-		
+
 		<script src="./js/functions.js"></script>
 	</head>
 	<body class="ancho">
 		<div class="container">
 			<img
-				src="./imagenes/portada234.jpg"
+				src="./imagenes/portada2344.jpg"
 				alt="Portada"
 				class="cover-image" />
 
@@ -119,7 +119,56 @@
 			<!-- falso o verdadero -->
 			<div class="falso"></div>
 			<div class="verdadero"></div>
-			
+
+			<!-- punticos seccion -->
+			<div class="punticos-container">
+				<div class="punto0"></div>
+				<div class="punto1"></div>
+				<div class="punto2"></div>
+				<div class="punto3"></div>
+				<div class="punto4"></div>
+				<div class="punto5"></div>
+				<div class="punto6"></div>
+				<div class="punto7"></div>
+				<div class="punto8"></div>
+				<div class="punto9"></div>
+				<!-- <div class="puntico" style="display: none;">
+					<img src="./imagenes/punto2.png" alt="" />
+				</div>
+	
+				<div class="puntico1" style="display: none;">
+					<img src="./imagenes/punto2.png" alt="" />
+				</div>
+	
+				<div class="puntico2" style="display: none;">
+					<img src="./imagenes/punto2.png" alt="" />
+				</div>
+	
+				<div class="puntico3" style="display: none;">
+					<img src="./imagenes/punto2.png" alt="" />
+				</div>
+	
+				<div class="puntico4" style="display: none;">
+					<img src="./imagenes/punto2.png" alt="" />
+				</div>
+	
+				<div class="puntico5" style="display: none;">
+					<img src="./imagenes/punto2.png" alt="" />
+				</div>
+	
+				<div class="puntico6" style="display: none;">
+					<img src="./imagenes/punto2.png" alt="" />
+				</div>
+	
+				<div class="puntico7" style="display: none;">
+					<img src="./imagenes/punto2.png" alt="" />
+				</div>
+	
+				<div class="puntico8" style="display: none;">
+					<img src="./imagenes/punto2.png" alt="" />
+				</div> -->
+			</div>
+			<!-- punticos seccion -->
 		</div>
 
 		<!-- Scripts -->
@@ -127,5 +176,29 @@
 		<script src="./js/datajuego.js"></script>
 		<script src="./js/sonidos.js"></script>
 		<script src="./js/script234.js"></script>
+
+		<script>
+			document.querySelector('.puntico').style.width = `${
+				(document.querySelector('.container').clientWidth) / 100
+			}px`
+			document.querySelector('.circle').style.height = `${
+				(document.querySelector('.container').clientHeight * 1.8) / 100
+			}px`
+
+			document.querySelector('.puntico').style.top = `${
+				(document.querySelector('.container').clientHeight * 90.6) / 100
+			}px`
+
+			window.addEventListener('resize', function () {
+				document.querySelector('.circle').style.width = `${
+					(218 * document.querySelector('.container').clientWidth) /
+					1101
+				}px`
+				document.querySelector('.circle').style.height = `${
+					(215 * document.querySelector('.container').clientHeight) /
+					625
+				}px`
+			})
+		</script>
 	</body>
 </html>

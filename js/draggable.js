@@ -2,6 +2,8 @@ let offsetX,
 	offsetY,
 	isDragging = false
 
+const container = document.querySelector('.container')
+
 const checkDrop = (draggable, droppable, callback) => {
 	const draggableRect = draggable.getBoundingClientRect()
 	const droppableRect = droppable.getBoundingClientRect()
@@ -24,12 +26,15 @@ const handleDraggable = (draggable) => {
 		offsetY = touch.clientY - draggable.getBoundingClientRect().top
 	})
 
-    draggable.addEventListener('mousedown', (e) => {
+	draggable.addEventListener('mousedown', (e) => {
+		e.stopPropagation()
 		isDragging = true
 		offsetX = e.clientX - draggable.getBoundingClientRect().left
-		offsetY = e.clientY - draggable.getBoundingClientRect().top
+		// offsetY = e.clientY - draggable.getBoundingClientRect().top
+		console.log('draggable', e.clientX - draggable.getBoundingClientRect().left)
+		console.log('client', container.clientWidth)
+		e.preventDefault()
 	})
-
 }
 
 const executeMoving = (draggable) => {
@@ -39,7 +44,9 @@ const executeMoving = (draggable) => {
 
 			const minX = 6
 			const maxX = 67
-            let position = ((touch.clientX - offsetX) * 100) / document.querySelector('.container').clientWidth;
+			let position =
+				((touch.clientX - offsetX) * 100) /
+				document.querySelector('.container').clientWidth
 
 			if (position < minX) {
 				draggable.style.left = `${minX}%`
@@ -52,23 +59,33 @@ const executeMoving = (draggable) => {
 			draggable.style.top = `17%`
 		}
 	})
-	
-	document.addEventListener('mousemove', (e) => {
+
+	container.addEventListener('mousemove', (e) => {
 		if (isDragging) {
-            const minX = 6,
-                  maxX = 67;
+			const minX = container.clientWidth * 0.06 // 6% del contenedor
+			const maxX = container.clientWidth * 0.67 // 67% del contenedor
 
-            let position = ((e.clientX - offsetX) * 100) / document.querySelector('.container').clientWidth;
+			// Calcula la nueva posición
+			let positionX = container.clientWidth > 1700 ? e.clientX - draggable.clientWidth : e.clientX - draggable.clientWidth * 1.5
+			let positionY = e.clientY - offsetY
 
-            if (position < minX) {
-                draggable.style.left = `${minX}%`
-            } else if (position > 67) {
-                draggable.style.left = `${maxX}%`
-            } else {
-                draggable.style.left = `${position}%`
-            }
+			if (positionX < minX) {
+				positionX = minX;
+			} else if (positionX > maxX) {
+				positionX = maxX;
+			}
+			// Restringe el movimiento horizontal
+			
+			// if (positionX < minX) {
+			// 	positionX = minX
+			// } else if (positionX > maxX) {
+			// 	positionX = maxX
+			// }
 
-            draggable.style.top = `17%`
+			// Asigna la nueva posición
+			draggable.style.left = `${positionX}px`
+
+			draggable.style.top = `17%`
 		}
 	})
 }

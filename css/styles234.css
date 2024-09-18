@@ -163,6 +163,196 @@ body {
 	height: 100%;
 }
 
+.punticos-container {
+	position: absolute;
+    top: 90.5%;
+	right: 38.2%;
+    width: 23.5%;
+    height: 3%;
+	display: flex;
+	gap: 5%
+}
+
+.puntico {
+    width: 1%;
+    top: 89.1%;
+    right: 58.2%;
+    cursor: pointer;
+    height: 1.8%;
+}
+
+.puntico img {
+	width: 100%;
+	height: 100%;
+}
+
+.puntico1 {
+	width: 1%;
+    top: 89.2%;
+    right: 55.7%;
+	cursor: pointer;
+}
+
+.puntico1 img {
+	width: 100%;
+	height: 100%;
+}
+
+.puntico2 {
+	width: 1%;
+    top: 90.6%;
+    right: 53.2%;
+	cursor: pointer;
+}
+
+.puntico2 img {
+	width: 100%;
+	height: 100%;
+}
+
+.puntico3 {
+	width: 1%;
+    top: 90.6%;
+    right: 50.7%;
+	cursor: pointer;
+}
+
+.puntico3 img {
+	width: 100%;
+	height: 100%;
+}
+
+.puntico4 {
+	width: 1%;
+    top: 90.6%;
+    right: 48.2%;
+	cursor: pointer;
+}
+
+.puntico4 img {
+	width: 100%;
+	height: 100%;
+}
+
+.puntico5 {
+	width: 1%;
+    top: 90.6%;
+    right: 45.7%;
+	cursor: pointer;
+}
+
+.puntico5 img {
+	width: 100%;
+	height: 100%;
+}
+
+.puntico6 {
+	width: 1%;
+    top: 90.6%;
+    right: 43.2%;
+	cursor: pointer;
+}
+
+.puntico6 img {
+	width: 100%;
+	height: 100%;
+}
+
+.puntico7 {
+	width: 1%;
+    top: 90.6%;
+    right: 40.7%;
+	cursor: pointer;
+}
+
+.puntico7 img {
+	width: 100%;
+	height: 100%;
+}
+
+.puntico8 {
+	width: 1%;
+    top: 90.6%;
+    right: 38.2%;
+	cursor: pointer;
+}
+
+.puntico8 img {
+	width: 100%;
+	height: 100%;
+}
+
+.punto0 {
+	width: 3.9%;
+    height: 51.6%;
+	border-radius: 100%;
+	border: 2px solid #50E2D0;
+	background: #50E2D0;
+}
+
+.punto1 {
+	width: 3.9%;
+    height: 51.6%;
+	border-radius: 100%;
+	border: 2px solid #50E2D0;
+}
+
+.punto2 {
+	width: 3.9%;
+    height: 51.6%;
+	border-radius: 100%;
+	border: 2px solid #50E2D0;
+}
+
+.punto3 {
+	width: 3.9%;
+    height: 51.6%;
+	border-radius: 100%;
+	border: 2px solid #50E2D0;
+}
+
+.punto4 {
+	width: 3.9%;
+    height: 51.6%;
+	border-radius: 100%;
+	border: 2px solid #50E2D0;
+}
+
+.punto5 {
+	width: 3.9%;
+    height: 51.6%;
+	border-radius: 100%;
+	border: 2px solid #50E2D0;
+}
+
+.punto6 {
+	width: 3.9%;
+    height: 51.6%;
+	border-radius: 100%;
+	border: 2px solid #50E2D0;
+}
+
+.punto7 {
+	width: 3.9%;
+    height: 51.6%;
+	border-radius: 100%;
+	border: 2px solid #50E2D0;
+}
+
+.punto8 {
+	width: 3.9%;
+    height: 51.6%;
+	border-radius: 100%;
+	border: 2px solid #50E2D0;
+}
+
+.punto9 {
+	width: 3.9%;
+    height: 51.6%;
+	border-radius: 100%;
+	border: 2px solid #50E2D0;
+}
+
 /* pop ups */
 .car-pop1 {
 	position: absolute;
