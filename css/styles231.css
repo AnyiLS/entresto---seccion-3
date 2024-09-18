@@ -20,6 +20,35 @@ body {
 	height: 100vh;
 }
 
+.boton-home {
+	position: absolute;
+	width: 4.4%;
+	height: 8%;
+	top: 88.3%;
+	right: 47.8%;
+	cursor: pointer;
+	border-radius: 30px;
+}
+
+.boton-next {
+	position: absolute;
+	width: 4.4%;
+	height: 8%;
+	top: 88.3%;
+	right: 42.4%;
+	border-radius: 30px;
+	cursor: pointer;
+}
+
+.boton-atras {
+	position: absolute;
+	width: 4.4%;
+	height: 8%;
+	top: 88.3%;
+	right: 53.6%;
+	border-radius: 30px;
+}
+
 .link-1 {
 	position: absolute;
 	top: 55%;
