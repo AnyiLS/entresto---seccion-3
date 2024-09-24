@@ -5,8 +5,8 @@ let offsetX,
 const container = document.querySelector('.container')
 
 const checkDrop = (draggable, droppable, callback) => {
-	const draggableRect = draggable.getBoundingClientRect()
-	const droppableRect = droppable.getBoundingClientRect()
+	const draggableRect = draggable.getBoundingClientRect();
+	const droppableRect = droppable.getBoundingClientRect();
 
 	if (
 		draggableRect.left < droppableRect.right &&
@@ -14,7 +14,16 @@ const checkDrop = (draggable, droppable, callback) => {
 		draggableRect.top < droppableRect.bottom &&
 		draggableRect.bottom > droppableRect.top
 	) {
-		callback()
+		// Aquí asumimos que draggable tiene una propiedad de estilo 'left' que podemos modificar
+		const movementDirection = draggableRect.left < droppableRect.left ? 'right' : 'left';
+		
+		if (movementDirection === 'left') {
+			draggable.style.left = '6%';
+		} else {
+			draggable.style.left = '67%';
+		}
+
+		callback();
 	}
 }
 
