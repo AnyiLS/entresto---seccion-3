@@ -57,8 +57,8 @@ const executeMoving = (draggable) => {
 		if (isDragging) {
 			const touch = e.touches[0]
 
-			const minX = 35
-			const maxX = 37
+			const minX = 32
+			const maxX = 40
 			let position =
 				((touch.clientX - offsetX) * 100) /
 				document.querySelector('.container').clientWidth
@@ -71,14 +71,14 @@ const executeMoving = (draggable) => {
 				document.querySelector(`.tarjeta${pregunta + 1}`).style.left = `${position}%`
 			}
 
-			document.querySelector(`.tarjeta${pregunta + 1}`).style.top = `17%`
+			document.querySelector(`.tarjeta${pregunta + 1}`).style.top = `16%`
 		}
 	})
 
 	container.addEventListener('mousemove', (e) => {
 		if (isDragging) {
-			const minX = container.clientWidth * 0.35 // 6% del contenedor
-			const maxX = container.clientWidth * 0.37 // 67% del contenedor
+			const minX = container.clientWidth * 0.32 // 6% del contenedor
+			const maxX = container.clientWidth * 0.4 // 67% del contenedor
 
 			// Calcula la nueva posición
 			let positionX = container.clientWidth > 1700 ? e.clientX - document.querySelector(`.tarjeta${pregunta + 1}`).clientWidth : e.clientX - document.querySelector(`.tarjeta${pregunta + 1}`).clientWidth * 1.5
@@ -100,7 +100,7 @@ const executeMoving = (draggable) => {
 			// Asigna la nueva posición
 			document.querySelector(`.tarjeta${pregunta + 1}`).style.left = `${positionX}px`
 
-			document.querySelector(`.tarjeta${pregunta + 1}`).style.top = `17%`
+			document.querySelector(`.tarjeta${pregunta + 1}`).style.top = `16%`
 		}
 	})
 }
