@@ -10,13 +10,13 @@ const handleCheckFalse = () => {
 		const respuesta = respuestas[pregunta]
 		if (respuesta.correcto === false) {
 			const event = new MouseEvent('click', {
-                bubbles: true,
-                cancelable: true,
-                view: window
-            });
+				bubbles: true,
+				cancelable: true,
+				view: window,
+			})
 
-            // Despacha el evento sobre el elemento
-            document.querySelector('.verdadero').dispatchEvent(event);
+			// Despacha el evento sobre el elemento
+			document.querySelector('.verdadero').dispatchEvent(event)
 			sonidoexitoso()
 			$('.falso').css('border', '5px solid green')
 			$('.falso').css('background', 'url(./imagenes/estrellas.png)')
@@ -31,13 +31,13 @@ const handleCheckFalse = () => {
 			}, 2000)
 		} else {
 			const event = new MouseEvent('click', {
-                bubbles: true,
-                cancelable: true,
-                view: window
-            });
+				bubbles: true,
+				cancelable: true,
+				view: window,
+			})
 
-            // Despacha el evento sobre el elemento
-            document.querySelector('.verdadero').dispatchEvent(event);
+			// Despacha el evento sobre el elemento
+			document.querySelector('.verdadero').dispatchEvent(event)
 			sonidoerroneo()
 			$('.falso').css('border', '5px solid red')
 			setTimeout(() => {
@@ -53,22 +53,19 @@ const handleCheckTrue = () => {
 		const respuesta = respuestas[pregunta]
 		if (respuesta.correcto === true) {
 			const event = new MouseEvent('click', {
-                bubbles: true,
-                cancelable: true,
-                view: window
-            });
+				bubbles: true,
+				cancelable: true,
+				view: window,
+			})
 
-            // Despacha el evento sobre el elemento
-            document.querySelector('.verdadero').dispatchEvent(event);
+			// Despacha el evento sobre el elemento
+			document.querySelector('.verdadero').dispatchEvent(event)
 			sonidoexitoso()
 			$('.verdadero').css('border', '5px solid green')
-			$('.verdadero').css(
-				'background',
-				'url(./imagenes/estrellas.png)'
-			)
+			$('.verdadero').css('background', 'url(./imagenes/estrellas.png)')
 			conteo.push(true)
 			setTimeout(() => {
-				$('.verdadero').on('click', () => {});
+				$('.verdadero').on('click', () => {})
 				validarResultado()
 				if (pregunta + 1 < 10) {
 					pregunta++
@@ -77,13 +74,13 @@ const handleCheckTrue = () => {
 			}, 2000)
 		} else {
 			const event = new MouseEvent('click', {
-                bubbles: true,
-                cancelable: true,
-                view: window
-            });
+				bubbles: true,
+				cancelable: true,
+				view: window,
+			})
 
-            // Despacha el evento sobre el elemento
-            document.querySelector('.verdadero').dispatchEvent(event);
+			// Despacha el evento sobre el elemento
+			document.querySelector('.verdadero').dispatchEvent(event)
 			sonidoerroneo()
 			$('.verdadero').css('border', '5px solid red')
 			setTimeout(() => {
@@ -94,6 +91,7 @@ const handleCheckTrue = () => {
 }
 
 const cambiarPregunta = () => {
+	
 	$(`.tarjeta${pregunta + 1}`).css('display', 'block')
 	$(`.tarjeta${pregunta}`).css('display', 'none')
 	$('.verdadero').css('border', 'none')
@@ -101,11 +99,21 @@ const cambiarPregunta = () => {
 	$('.verdadero').css('background', 'none')
 	$('.falso').css('background', 'none')
 	puedeselecionar = false
+	handleDraggable()
+	executeMoving()
+	handleDroppable()
+	$(`.punto${pregunta}`).css('background', '#50E2D0')
 	handleDraggable(document.querySelector(`.tarjeta${pregunta + 1}`))
 	executeMoving(document.querySelector(`.tarjeta${pregunta + 1}`))
-	handleDroppable(document.querySelector(`.tarjeta${pregunta + 1}`), document.querySelector('.falso'), handleCheckFalse)
-	handleDroppable(document.querySelector(`.tarjeta${pregunta + 1}`), document.querySelector('.verdadero'), handleCheckTrue)
-	$(`.punto${pregunta}`).css('background', '#50E2D0')
+	handleDroppable(
+		document.querySelector(`.tarjeta${pregunta + 1}`),
+		document.querySelector('.falso'),
+		(type) => {
+			console.log(type)
+			type === 'false' ? handleCheckFalse() : handleCheckTrue()
+		}
+	)
+	// type === 'false' ? handleCheckFalse() : handleCheckTrue()
 }
 
 const validarResultado = () => {
@@ -116,12 +124,17 @@ const validarResultado = () => {
 }
 
 $(document).ready(function () {
-	
-
 	handleDraggable(document.querySelector(`.tarjeta${pregunta + 1}`))
 	executeMoving(document.querySelector(`.tarjeta${pregunta + 1}`))
-	handleDroppable(document.querySelector(`.tarjeta${pregunta + 1}`), document.querySelector('.falso'), handleCheckFalse)
-	handleDroppable(document.querySelector(`.tarjeta${pregunta + 1}`), document.querySelector('.verdadero'), handleCheckTrue)
+	handleDroppable(
+		document.querySelector(`.tarjeta${pregunta + 1}`),
+		document.querySelector('.falso'),
+		(type) => {
+			console.log(type)
+			type === 'false' ? handleCheckFalse() : handleCheckTrue()
+		}
+	)
+	// handleDroppable(document.querySelector(`.tarjeta${pregunta + 1}`), document.querySelector('.verdadero'), handleCheckTrue)
 
 	$('.cerrar').on('click', () => {
 		$(`.car-pop${pregunta + 1}`).css('display', 'none')
