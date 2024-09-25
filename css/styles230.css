@@ -63,6 +63,15 @@ body {
 	animation: pulseGlow 1.5s infinite; /* Animación para el resplandor */
 }
 
+.vutom-col {
+	position: absolute;
+	width: 4.4%;
+	height: 7.4%;
+	top: 88.5%;
+    right: 42.4%;
+	background: #ffffff80;
+	border-radius: 90px;
+}
 .boton-home {
 	position: absolute;
 	width: 4.4%;

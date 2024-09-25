@@ -24,16 +24,37 @@
 			<a href="./index229.html" class="boton-atras"></a>
 			<a href="./index231.html" class="boton-next"></a>
 
-			<a href="./index238.html" class="link-1"></a>
+			<div class="link-1"></div>
 
 			<div
 				class="puntero animate__animated animate__pulse animate__infinite">
 				<img src="./imagenes/puntero.png" alt="puntero" />
 			</div>
+
+			<div class="vutom-col"></div>
 		</div>
 
 		<!-- Scripts -->
 
 		<script src="./js/scripts.js"></script>
+		<script>
+			$(document).ready(function () {
+				$('.link-1').on('click', () => {
+					localStorage.setItem('slide230', 'true')
+					window.location.href = './index238.html'
+				})
+
+				const slide = localStorage.getItem('slide230')
+				if (slide && slide === 'true') {
+					$('.boton-next').show()
+					$('.cursor').hide()
+					$('.vutom-col').hide()
+				} else {
+					localStorage.setItem('slide230', 'false')
+					$('.boton-next').hide()
+					$('.vutom-col').show()
+				}
+			})
+		</script>
 	</body>
 </html>
