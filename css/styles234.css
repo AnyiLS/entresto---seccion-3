@@ -596,9 +596,9 @@ body {
 
 .falso {
 	position: absolute;
-	width: 26.3%;
-	height: 67.5%;
-	top: 17%;
+	width: 26.5%;
+    height: 68.2%;
+	top: 16%;
 	left: 5.8%;
 	border-radius: 40px;
 	background-size: contain !important;
@@ -607,9 +607,9 @@ body {
 
 .verdadero {
 	position: absolute;
-	width: 26.3%;
-	height: 67.5%;
-	top: 17%;
+	width: 26.5%;
+    height: 68.2%;
+	top: 16%;
 	right: 5.8%;
 	border-radius: 40px;
 	background-size: contain !important;
@@ -657,5 +657,22 @@ body {
 	.container .cover-image {
 		width: 100vw;
 		height: auto;
+	}
+
+	.falso {
+		position: absolute;
+		width: 25.9%;
+		height: 67.4%;
+		top: 16%;
+		left: 5.8%;
+		border-radius: 21px;
+	}
+
+	.verdadero {
+		width: 25.9%;
+		height: 67.4%;
+		top: 16%;
+		right: 5.8%;
+		border-radius: 21px;
 	}
 }

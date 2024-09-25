@@ -99,19 +99,16 @@ const cambiarPregunta = () => {
 	$('.verdadero').css('background', 'none')
 	$('.falso').css('background', 'none')
 	puedeselecionar = false
-	handleDraggable()
-	executeMoving()
-	handleDroppable()
 	$(`.punto${pregunta}`).css('background', '#50E2D0')
-	handleDraggable(document.querySelector(`.tarjeta${pregunta + 1}`))
-	executeMoving(document.querySelector(`.tarjeta${pregunta + 1}`))
+	handleDraggable(document.querySelector(`.tarjeta${pregunta + 1}`),pregunta)
+	executeMoving(document.querySelector(`.tarjeta${pregunta + 1}`),pregunta)
 	handleDroppable(
 		document.querySelector(`.tarjeta${pregunta + 1}`),
 		document.querySelector('.falso'),
 		(type) => {
 			console.log(type)
 			type === 'false' ? handleCheckFalse() : handleCheckTrue()
-		}
+		}, pregunta
 	)
 	// type === 'false' ? handleCheckFalse() : handleCheckTrue()
 }
@@ -124,15 +121,16 @@ const validarResultado = () => {
 }
 
 $(document).ready(function () {
-	handleDraggable(document.querySelector(`.tarjeta${pregunta + 1}`))
-	executeMoving(document.querySelector(`.tarjeta${pregunta + 1}`))
+	handleDraggable(document.querySelector(`.tarjeta${pregunta + 1}`), pregunta)
+	executeMoving(document.querySelector(`.tarjeta${pregunta + 1}`), pregunta)
 	handleDroppable(
 		document.querySelector(`.tarjeta${pregunta + 1}`),
 		document.querySelector('.falso'),
 		(type) => {
 			console.log(type)
 			type === 'false' ? handleCheckFalse() : handleCheckTrue()
-		}
+		},
+		pregunta
 	)
 	// handleDroppable(document.querySelector(`.tarjeta${pregunta + 1}`), document.querySelector('.verdadero'), handleCheckTrue)
 
